@@ -1,0 +1,20 @@
+{
+  "name": "focalis-bootstrap",
+  "version": "0.0.0",
+  "description": "Focalis theme base on bootstrap",
+  "keywords": [],
+  "license": "ISC",
+  "author": "Focalis",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass src/_focalis-variables.scss dist/focalis.css",
+    "build:min": "sass src/_focalis-variables.scss dist/focalis.min.css --style=compressed"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport meta pour le responsive mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test complet - Thème Bootstrap personnalisé v5.3.8</title>
+    
+    <!-- ===== VOTRE THÈME PERSONNALISÉ (compilé avec vos couleurs) ===== -->
+    <link rel="stylesheet" href="./dist/focalis.min.css">
+    
+    <!-- ===== (Optionnel) CDN Bootstrap Icons pour compléter ===== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <style>
+        /* Styles supplémentaires pour la mise en page de la démo */
+        body {
+            padding-bottom: 3rem;
+        }
+        .section-title {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bs-primary);
+        }
+        .component-group {
+            background-color: rgba(var(--bs-secondary-rgb), 0.05);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .component-group h3 {
+            margin-top: 0;
+            color: var(--bs-primary);
+            font-size: 1.5rem;
+        }
+        /* Pour les démonstrations de couleurs */
+        .color-box {
+            width: 100%;
+            height: 60px;
+            border-radius: 0.375rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation principale (inclut navbar, dropdowns, collapse) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mon Thème Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDemo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarDemo">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                    </li>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Composants
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#alerts">Alerts</a></li>
+                            <li><a class="dropdown-item" href="#buttons">Boutons</a></li>
+                            <li><a class="dropdown-item" href="#cards">Cartes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#modals">Modals</a></li>
+                        </ul>
+                    </li>
+                    <!-- Nav avec tab -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="tab" data-bs-target="#home-tab-pane">Lien</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Désactivé</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Rechercher">
+                    <button class="btn btn-outline-light" type="submit">Chercher</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="display-3 text-center mb-5">Test de tous les composants Bootstrap 5.3.8</h1>
+        <p class="lead text-center mb-5">Avec votre thème personnalisé - <span class="badge bg-primary">votre palette de couleurs</span></p>
+
+        <!-- SECTION 1: TYPOGRAPHIE, COULEURS, UTILITAIRES -->
+        <section>
+            <h2 class="section-title">1. Typographie & couleurs</h2>
+            <div class="component-group">
+                <h3>Couleurs de thème</h3>
+                <div class="row mb-4">
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-primary"></div>
+                        <p>Primary (#2980b9)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-secondary"></div>
+                        <p>Secondary (#7D868F)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-success"></div>
+                        <p>Success (#099f64)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-danger"></div>
+                        <p>Danger (#e74c3c)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-warning"></div>
+                        <p>Warning (#ffd221)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-info"></div>
+                        <p>Info (#0dcaf0)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-light border"></div>
+                        <p>Light (#f1f3f5)</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="color-box bg-dark"></div>
+                        <p>Dark (#34495e)</p>
+                    </div>
+                </div>
+
+                <h3>Texte et mise en forme</h3>
+                <p class="text-primary">.text-primary</p>
+                <p class="text-secondary">.text-secondary</p>
+                <p class="text-success">.text-success</p>
+                <p class="text-danger">.text-danger</p>
+                <p class="text-warning bg-dark p-2">.text-warning</p>
+                <p class="text-info">.text-info</p>
+                <p class="text-light bg-dark p-2">.text-light</p>
+                <p class="text-dark">.text-dark</p>
+                
+                <h4 class="mt-3">Badges</h4>
+                <span class="badge bg-primary">Primary</span>
+                <span class="badge bg-secondary">Secondary</span>
+                <span class="badge bg-success">Success</span>
+                <span class="badge bg-danger">Danger</span>
+                <span class="badge bg-warning text-dark">Warning</span>
+                <span class="badge bg-info">Info</span>
+                <span class="badge bg-light text-dark">Light</span>
+                <span class="badge bg-dark">Dark</span>
+                <span class="badge rounded-pill bg-primary">Pill badge</span>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BOUTONS (tous les styles + états) -->
+        <section id="buttons">
+            <h2 class="section-title">2. Boutons</h2>
+            <div class="component-group">
+                <h3>Styles de base</h3>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-secondary">Secondary</button>
+                <button type="button" class="btn btn-success">Success</button>
+                <button type="button" class="btn btn-danger">Danger</button>
+                <button type="button" class="btn btn-warning">Warning</button>
+                <button type="button" class="btn btn-info">Info</button>
+                <button type="button" class="btn btn-light">Light</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-link">Lien</button>
+
+                <h3 class="mt-3">Boutons outline</h3>
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                <button type="button" class="btn btn-outline-success">Success</button>
+                <button type="button" class="btn btn-outline-danger">Danger</button>
+                <button type="button" class="btn btn-outline-warning">Warning</button>
+                <button type="button" class="btn btn-outline-info">Info</button>
+                <button type="button" class="btn btn-outline-light">Light</button>
+                <button type="button" class="btn btn-outline-dark">Dark</button>
+
+                <h3 class="mt-3">Tailles</h3>
+                <button type="button" class="btn btn-primary btn-lg">Large</button>
+                <button type="button" class="btn btn-primary">Normal</button>
+                <button type="button" class="btn btn-primary btn-sm">Petit</button>
+
+                <h3 class="mt-3">États</h3>
+                <button type="button" class="btn btn-primary active">Actif</button>
+                <button type="button" class="btn btn-primary" disabled>Désactivé</button>
+
+                <h3 class="mt-3">Groupe de boutons</h3>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary">Gauche</button>
+                    <button type="button" class="btn btn-primary">Milieu</button>
+                    <button type="button" class="btn btn-primary">Droite</button>
+                </div>
+
+                <div class="btn-group mt-2" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck1">Check 1</label>
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btncheck2">Check 2</label>
+                </div>
+
+                <div class="btn-group mt-2" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ALERTES -->
+        <section id="alerts">
+            <h2 class="section-title">3. Alertes</h2>
+            <div class="component-group">
+                <div class="alert alert-primary" role="alert">Alerte primary - <a href="#" class="alert-link">un lien</a></div>
+                <div class="alert alert-secondary" role="alert">Alerte secondary</div>
+                <div class="alert alert-success" role="alert">Alerte success</div>
+                <div class="alert alert-danger" role="alert">Alerte danger</div>
+                <div class="alert alert-warning" role="alert">Alerte warning</div>
+                <div class="alert alert-info" role="alert">Alerte info</div>
+                <div class="alert alert-light" role="alert">Alerte light</div>
+                <div class="alert alert-dark" role="alert">Alerte dark</div>
+                
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    Alerte avec fermeture
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CARTES -->
+        <section id="cards">
+            <h2 class="section-title">4. Cartes</h2>
+            <div class="component-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/300x150" class="card-img-top" alt="placeholder">
+                            <div class="card-body">
+                                <h5 class="card-title">Titre de carte</h5>
+                                <p class="card-text">Texte de démonstration avec vos couleurs personnalisées.</p>
+                                <a href="#" class="btn btn-primary">Bouton</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-bg-primary">
+                            <div class="card-body">
+                                <h5 class="card-title">Carte primary</h5>
+                                <p class="card-text">Arrière-plan primary.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-danger">
+                            <div class="card-body text-danger">
+                                <h5 class="card-title">Carte avec bordure</h5>
+                                <p class="card-text">Bordure et texte danger.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="card text-center">
+                            <div class="card-header">En-tête</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Titre</h5>
+                                <p class="card-text">Contenu</p>
+                                <a href="#" class="btn btn-primary">Aller</a>
+                            </div>
+                            <div class="card-footer text-body-secondary">Pied de carte</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: FORMULAIRES -->
+        <section>
+            <h2 class="section-title">5. Formulaires</h2>
+            <div class="component-group">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Adresse email</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nom@exemple.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Fichier</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Zone de texte</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleSelect" class="form-label">Sélection</label>
+                        <select class="form-select" id="exampleSelect">
+                            <option selected>Ouvrir ce menu</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rangeExample" class="form-label">Curseur</label>
+                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="rangeExample">
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check1">
+                            <label class="form-check-label" for="check1">Case à cocher par défaut</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="radio1">
+                            <label class="form-check-label" for="radio1">Bouton radio 1</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switch1">
+                            <label class="form-check-label" for="switch1">Interrupteur</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputGroup" class="form-label">Groupes d'entrée</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">@</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="floatingInput" class="form-label">Label flottant</label>
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="nom@exemple.com">
+                            <label for="floatingInput">Adresse email</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="validationCustom" class="form-label">Validation</label>
+                        <input type="text" class="form-control is-valid" id="validationCustom" value="valide">
+                        <div class="valid-feedback">Parfait !</div>
+                        <input type="text" class="form-control is-invalid mt-2" id="validationCustom2" value="erreur">
+                        <div class="invalid-feedback">Invalide</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 6: TABLEAUX -->
+        <section>
+            <h2 class="section-title">6. Tableaux</h2>
+            <div class="component-group">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Jean</td>
+                            <td>Dupont</td>
+                            <td>jean@exemple.com</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Marie</td>
+                            <td>Martin</td>
+                            <td>marie@exemple.com</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-dark table-bordered">
+                    <thead>
+                        <tr><th>Table sombre</th><th>Bordée</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Cellule 1</td><td>Cellule 2</td></tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-primary">
+                    <thead>
+                        <tr><th>Table avec couleur primary</th></tr>
+                    </thead>
+                </table>
+            </div>
+        </section>
+
+        <!-- SECTION 7: COMPOSANTS AVANCÉS (nécessitent JS) -->
+        <section>
+            <h2 class="section-title">7. Composants interactifs (JS requis)</h2>
+            <div class="component-group">
+                
+                <h3>Accordéon</h3>
+                <div class="accordion mb-4" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                Élément d'accordéon #1
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">Contenu avec vos couleurs personnalisées.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                Élément #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">Second contenu.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Carrousel</h3>
+                <div id="carouselExample" class="carousel slide mb-4" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="bg-primary text-white p-5 text-center">Slide 1 - Primary</div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="bg-secondary text-white p-5 text-center">Slide 2 - Secondary</div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="bg-success text-white p-5 text-center">Slide 3 - Success</div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+
+                <h3>Collapse</h3>
+                <p>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button">Lien avec href</a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">Bouton</button>
+                </p>
+                <div class="collapse" id="collapseExample">
+                    <div class="card card-body">Contenu masqué qui apparaît.</div>
+                </div>
+
+                <h3 class="mt-4">Dropdowns (supplémentaires)</h3>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown">Action</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Autre action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Séparé</a></li>
+                    </ul>
+                </div>
+
+                <h3 class="mt-4">List group avec onglets (tabs)</h3>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="tab" href="#list-home" role="tab">Accueil</a>
+                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="tab" href="#list-profile" role="tab">Profil</a>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-home" role="tabpanel">Contenu accueil</div>
+                            <div class="tab-pane fade" id="list-profile" role="tabpanel">Contenu profil</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Modal (ouvrir avec bouton)</h3>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Lancer la modal
+                </button>
+
+                <h3 class="mt-4">Offcanvas</h3>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+                    Ouvrir offcanvas
+                </button>
+
+                <h3 class="mt-4">Popovers (hover sur le bouton)</h3>
+                <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Titre" data-bs-content="Contenu du popover">Clique pour popover</button>
+
+                <h3 class="mt-4">Tooltips (survoler le bouton)</h3>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip en haut">
+                    Tooltip
+                </button>
+
+                <h3 class="mt-4">Toasts (notifications)</h3>
+                <button type="button" class="btn btn-primary" id="liveToastBtn">Afficher notification</button>
+                <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                    <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <i class="bi bi-info-circle me-2"></i>
+                            <strong class="me-auto">Bootstrap</strong>
+                            <small>à l'instant</small>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+                        </div>
+                        <div class="toast-body">
+                            Bonjour ! Ceci est un toast de notification.
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Scrollspy (nécessite structure spécifique, non inclus ici)</h3>
+                <p><span class="badge bg-info">Voir documentation pour Scrollspy complet</span></p>
+
+                <h3 class="mt-4">Spinners</h3>
+                <div class="spinner-border text-primary" role="status"><span class="visually-hidden">Chargement...</span></div>
+                <div class="spinner-border text-secondary"></div>
+                <div class="spinner-border text-success"></div>
+                <div class="spinner-border text-danger"></div>
+                <div class="spinner-grow text-primary"></div>
+                <div class="spinner-grow text-warning"></div>
+
+                <h3 class="mt-4">Pagination</h3>
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item disabled"><a class="page-link" href="#">Précédent</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Suivant</a></li>
+                    </ul>
+                </nav>
+
+                <h3 class="mt-4">Progress</h3>
+                <div class="progress mb-2" role="progressbar" aria-label="Exemple" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-primary" style="width: 25%">25%</div>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar bg-success" style="width: 40%">40%</div>
+                    <div class="progress-bar bg-warning" style="width: 20%">20%</div>
+                </div>
+
+                <h3 class="mt-4">Placeholders (squelette)</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title placeholder-glow">
+                            <span class="placeholder col-6"></span>
+                        </h5>
+                        <p class="card-text placeholder-glow">
+                            <span class="placeholder col-7"></span>
+                            <span class="placeholder col-4"></span>
+                        </p>
+                    </div>
+                </div>
+
+                <h3 class="mt-4">Breadcrumb</h3>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
+                        <li class="breadcrumb-item"><a href="#">Bibliothèque</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Données</li>
+                    </ol>
+                </nav>
+
+                <h3 class="mt-4">List group (standard)</h3>
+                <ul class="list-group">
+                    <li class="list-group-item">Élément simple</li>
+                    <li class="list-group-item active">Élément actif</li>
+                    <li class="list-group-item disabled">Élément désactivé</li>
+                    <li class="list-group-item list-group-item-primary">Primary</li>
+                    <li class="list-group-item list-group-item-secondary">Secondary</li>
+                </ul>
+
+                <h3 class="mt-4">Close button</h3>
+                <button type="button" class="btn-close"></button>
+                <button type="button" class="btn-close" disabled></button>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Titre de la modal</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        Contenu de la modal avec vos couleurs.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary">Sauvegarder</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offcanvas -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                Contenu de l'offcanvas...
+            </div>
+        </div>
+
+    </div> <!-- fin container -->
+
+    <!-- ===== SCRIPTS BOOTSTRAP (JS + Popper) ===== -->
+    <!-- Bundle includes Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <!-- Script pour activer les popovers et toasts (nécessitent initialisation) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Activer tous les popovers
+            var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+            var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+                return new bootstrap.Popover(popoverTriggerEl);
+            });
+            
+            // Activer tous les tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+            
+            // Toast
+            var toastTrigger = document.getElementById('liveToastBtn');
+            var toastLive = document.getElementById('liveToast');
+            if (toastTrigger) {
+                toastTrigger.addEventListener('click', function() {
+                    var toast = new bootstrap.Toast(toastLive);
+                    toast.show();
+                });
+            }
+        });
+    </script>
+
+    <footer class="container text-center mt-5">
+        <hr>
+        <p class="text-secondary">Test complet des composants Bootstrap 5.3.8 avec votre thème personnalisé</p>
+        <p>Vérifiez que toutes les couleurs correspondent à votre palette : <span class="text-primary">#2980b9</span>, <span class="text-secondary">#66798b</span>, <span class="text-success">#099f64</span>, etc.</p>
+    </footer>
+</body>
+</html>
